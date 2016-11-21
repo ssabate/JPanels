@@ -513,10 +513,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-                //Creo un nou objecte passant el nom de les columnes, i les dades a mostrar contingudes a un ArrayList
+        
+        //Creo un nou objecte passant el nom de les columnes, i les dades a mostrar contingudes a un ArrayList
         ModelTaula<Contacte> mt = new ModelTaula(new String[]{"Nom", "Cognoms", "Telèfons"}, JFramePrincipal.agenda, Contacte.class);
-        mt = new ModelTaula(JFramePrincipal.agenda, Contacte.class);
+        //mt = new ModelTaula(JFramePrincipal.agenda, Contacte.class);
         
         //Li assigno el model a la taula
         jTable2.setModel(mt);
@@ -541,7 +541,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         //Creo un nou objecte passant el nom de les columnes, i les dades a mostrar contingudes a un ArrayList
         ModelTaula<Telefon> mt = new ModelTaula<>(new String[]{"Número", "Tipo"}, new ArrayList(JFramePrincipal.telefons), Telefon.class);
-        mt = new ModelTaula<>(new ArrayList(JFramePrincipal.telefons), Telefon.class);
+        //mt = new ModelTaula<>(new ArrayList(JFramePrincipal.telefons), Telefon.class);
         
         //Li assigno el model a la taula
         jTable1.setModel(mt);
@@ -552,7 +552,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         //cm.removeColumn(cm.getColumn(2));
         
         ModelTaula<Contacte> mt2 = new ModelTaula<>(new String[]{"Nom", "Cognoms", "Telèfons"}, JFramePrincipal.agenda, Contacte.class);
-        mt2 = new ModelTaula<>(JFramePrincipal.agenda, Contacte.class);
+        //mt2 = new ModelTaula<>(JFramePrincipal.agenda, Contacte.class);
         
         //Li assigno el model a la taula
         jTable3.setModel(mt2);
@@ -597,7 +597,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         JFramePrincipal.agenda.add(c);
         
         ModelTaula<Contacte> mt2 = new ModelTaula<>(new String[]{"Nom", "Cognoms", "Telèfons"}, JFramePrincipal.agenda, Contacte.class);
-        mt2 = new ModelTaula<>(JFramePrincipal.agenda, Contacte.class);
+        //mt2 = new ModelTaula<>(JFramePrincipal.agenda, Contacte.class);
         
         //Li assigno el model a la taula
         jTable3.setModel(mt2);
@@ -740,7 +740,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         c.set3434343telefon(telefons);
         
         ModelTaula<Contacte> mt2 = new ModelTaula<>(new String[]{"Nom", "Cognoms", "Telèfons"}, JFramePrincipal.agenda, Contacte.class);
-        mt2 = new ModelTaula<>(JFramePrincipal.agenda, Contacte.class);
+        //mt2 = new ModelTaula<>(JFramePrincipal.agenda, Contacte.class);
         
         //Li assigno el model a la taula
         jTable3.setModel(mt2);
@@ -756,7 +756,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         agenda.remove(c);
         
         ModelTaula<Contacte> mt2 = new ModelTaula<>(new String[]{"Nom", "Cognoms", "Telèfons"}, JFramePrincipal.agenda, Contacte.class);
-        mt2 = new ModelTaula<>(JFramePrincipal.agenda, Contacte.class);
+        //mt2 = new ModelTaula<>(JFramePrincipal.agenda, Contacte.class);
         
         //Li assigno el model a la taula
         jTable3.setModel(mt2);
@@ -892,6 +892,7 @@ class ModelTaula<T> extends AbstractTableModel {
     private String[] columnNames;
     private List<T> dades;
 
+    //Constructor on passem el nom de les columnes que vulguem. Mostrarà tantes columnes com noms passem
     public ModelTaula(String[] nomColumnes, ArrayList<T> dades, Class<T> typeParameterClass) {
         this.typeParameterClass = typeParameterClass;
         
@@ -899,6 +900,7 @@ class ModelTaula<T> extends AbstractTableModel {
         this.dades = dades;
     }
 
+    //Constructor on passem el nom de les dades i obté les columnes de la pròpia classe
     public ModelTaula(ArrayList<T> dades, Class<T> typeParameterClass) {
         this.typeParameterClass = typeParameterClass;
         if(dades!=null && !dades.isEmpty()){
