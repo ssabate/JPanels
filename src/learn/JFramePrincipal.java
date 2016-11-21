@@ -796,7 +796,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new JFramePrincipal().setVisible(true);
+                    JFramePrincipal frame=new JFramePrincipal();
+                    //Per a que col·loque la finestra al mig de la pantalla 
+                    frame.setLocationRelativeTo(null);
+                    frame.setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
